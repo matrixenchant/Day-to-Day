@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <title>Day-To-Day</title>
+
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            
+            setTimeout( () => {
+                $("#preload").fadeOut()
+                setTimeout( () => $("#preload").remove(), 400 )
+            }, 2800 )
+        })
+    </script>
+</head>
+<body>
+    <div id="preload">
+        <svg width="159" height="208" viewBox="0 0 159 208" fill="none" xmlns="http://www.w3.org/2000/svg" id="preload-svg">
+            <path d="M14.0808 121H22.9192V101.114L30.6528 108.847L36 103.5L18.5 86L1 103.5L6.34722 108.847L14.0808 101.114V121Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_0"></path>
+            <path d="M136.081 86H144.919V105.886L152.653 98.1528L158 103.5L140.5 121L123 103.5L128.347 98.1528L136.081 105.886V86Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_1"></path>
+            <path d="M49.2422 60H51.8203V1.52344H41.0781V21.0547C40.5052 20.2214 39.8021 19.5182 38.9688 18.9453C38.1354 18.3724 37.237 17.9167 36.2734 17.5781C35.3359 17.2135 34.3594 16.9531 33.3438 16.7969C32.3542 16.6406 31.3906 16.5625 30.4531 16.5625C27.5104 16.5625 24.737 17.1224 22.1328 18.2422C19.5547 19.362 17.2891 20.9115 15.3359 22.8906C13.4089 24.8698 11.8854 27.2135 10.7656 29.9219C9.64583 32.6302 9.08594 35.5599 9.08594 38.7109C9.08594 41.888 9.64583 44.8307 10.7656 47.5391C11.8854 50.2214 13.4089 52.5521 15.3359 54.5312C17.2891 56.4844 19.5547 58.0208 22.1328 59.1406C24.737 60.2344 27.5104 60.7812 30.4531 60.7812C31.8073 60.7812 33.1354 60.612 34.4375 60.2734C35.7656 59.9349 37.0547 59.4792 38.3047 58.9062C39.5547 58.3073 40.7396 57.6172 41.8594 56.8359C43.0052 56.0286 44.0859 55.1693 45.1016 54.2578L49.2422 60Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_2"></path>
+            <path d="M97.9141 60H100.492V18.2422H97.9141L93.7734 23.2031C92.7839 22.2656 91.7161 21.3932 90.5703 20.5859C89.4505 19.7786 88.2656 19.0755 87.0156 18.4766C85.7656 17.8776 84.4766 17.4089 83.1484 17.0703C81.8203 16.7318 80.4792 16.5625 79.125 16.5625C76.1823 16.5625 73.4089 17.1094 70.8047 18.2031C68.2266 19.2708 65.9609 20.7812 64.0078 22.7344C62.0807 24.6875 60.5573 27.0312 59.4375 29.7656C58.3177 32.474 57.7578 35.4557 57.7578 38.7109C57.7578 42.2005 58.3177 45.3125 59.4375 48.0469C60.5573 50.7812 62.0807 53.099 64.0078 55C65.9609 56.875 68.2266 58.3073 70.8047 59.2969C73.4089 60.2865 76.1823 60.7812 79.125 60.7812C80.4792 60.7812 81.8073 60.612 83.1094 60.2734C84.4375 59.9349 85.7266 59.4792 86.9766 58.9062C88.2266 58.3073 89.4115 57.6172 90.5312 56.8359C91.6771 56.0286 92.7578 55.1693 93.7734 54.2578L97.9141 60Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_3"></path>
+            <path d="M118.734 65.1953V75.9375L124.203 76.0156C127.146 76.0156 129.906 75.4557 132.484 74.3359C135.062 73.2161 137.315 71.6927 139.242 69.7656C141.195 67.8385 142.732 65.5859 143.852 63.0078C144.971 60.4297 145.544 57.6693 145.57 54.7266V18.1641H134.828V41.2891C134.828 42.4089 134.62 43.5026 134.203 44.5703C133.786 45.612 133.214 46.5495 132.484 47.3828C131.755 48.2161 130.896 48.8932 129.906 49.4141C128.943 49.9089 127.914 50.1562 126.82 50.1562C125.701 50.1562 124.646 49.974 123.656 49.6094C122.693 49.2448 121.846 48.6979 121.117 47.9688C120.388 47.2135 119.802 46.2891 119.359 45.1953C118.943 44.0755 118.734 42.7734 118.734 41.2891V18.1641H108.109V41.2891C108.109 44.2839 108.591 46.9922 109.555 49.4141C110.544 51.8099 111.885 53.8542 113.578 55.5469C115.297 57.2135 117.289 58.5026 119.555 59.4141C121.82 60.3255 124.242 60.7812 126.82 60.7812C128.044 60.7812 129.255 60.5339 130.453 60.0391C131.677 59.5443 132.875 59.0495 134.047 58.5547C133.656 59.5182 133.148 60.4036 132.523 61.2109C131.898 62.0443 131.169 62.7604 130.336 63.3594C129.529 63.9583 128.643 64.4271 127.68 64.7656C126.716 65.1042 125.714 65.2734 124.672 65.2734L118.734 65.1953Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_4"></path>
+            <path d="M55.5703 123.555C57.8359 124.518 60.2578 125 62.8359 125H70.9219V114.375H62.8359C61.7161 114.375 60.6615 114.167 59.6719 113.75C58.6823 113.307 57.8229 112.721 57.0938 111.992C56.3646 111.263 55.7917 110.417 55.375 109.453C54.9583 108.464 54.75 107.409 54.75 106.289V93.8672H70.9219V83.2422H54.75V66.5234H44.125V83.2422H38.9297V93.8672H44.125V106.289C44.125 108.867 44.6068 111.289 45.5703 113.555C46.5599 115.82 47.901 117.812 49.5938 119.531C51.3125 121.224 53.3047 122.565 55.5703 123.555Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_5"></path>
+            <path d="M115.688 112.461C116.807 109.753 117.367 106.836 117.367 103.711C117.367 100.378 116.807 97.3568 115.688 94.6484C114.568 91.9141 113.044 89.5833 111.117 87.6562C109.19 85.7031 106.924 84.2057 104.32 83.1641C101.742 82.0964 98.9688 81.5625 96 81.5625C93.0573 81.5625 90.2839 82.1224 87.6797 83.2422C85.1016 84.362 82.8359 85.9115 80.8828 87.8906C78.9557 89.8438 77.4323 92.1745 76.3125 94.8828C75.1927 97.5911 74.6328 100.534 74.6328 103.711C74.6328 106.836 75.1927 109.753 76.3125 112.461C77.4323 115.143 78.9557 117.474 80.8828 119.453C82.8359 121.406 85.1016 122.956 87.6797 124.102C90.2839 125.221 93.0573 125.781 96 125.781C98.9688 125.781 101.742 125.221 104.32 124.102C106.924 122.956 109.19 121.406 111.117 119.453C113.044 117.474 114.568 115.143 115.688 112.461Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_6"></path>
+            <path d="M49.2422 190H51.8203V131.523H41.0781V151.055C40.5052 150.221 39.8021 149.518 38.9688 148.945C38.1354 148.372 37.237 147.917 36.2734 147.578C35.3359 147.214 34.3594 146.953 33.3438 146.797C32.3542 146.641 31.3906 146.562 30.4531 146.562C27.5104 146.562 24.737 147.122 22.1328 148.242C19.5547 149.362 17.2891 150.911 15.3359 152.891C13.4089 154.87 11.8854 157.214 10.7656 159.922C9.64583 162.63 9.08594 165.56 9.08594 168.711C9.08594 171.888 9.64583 174.831 10.7656 177.539C11.8854 180.221 13.4089 182.552 15.3359 184.531C17.2891 186.484 19.5547 188.021 22.1328 189.141C24.737 190.234 27.5104 190.781 30.4531 190.781C31.8073 190.781 33.1354 190.612 34.4375 190.273C35.7656 189.935 37.0547 189.479 38.3047 188.906C39.5547 188.307 40.7396 187.617 41.8594 186.836C43.0052 186.029 44.0859 185.169 45.1016 184.258L49.2422 190Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_7"></path>
+            <path d="M97.9141 190H100.492V148.242H97.9141L93.7734 153.203C92.7839 152.266 91.7161 151.393 90.5703 150.586C89.4505 149.779 88.2656 149.076 87.0156 148.477C85.7656 147.878 84.4766 147.409 83.1484 147.07C81.8203 146.732 80.4792 146.562 79.125 146.562C76.1823 146.562 73.4089 147.109 70.8047 148.203C68.2266 149.271 65.9609 150.781 64.0078 152.734C62.0807 154.688 60.5573 157.031 59.4375 159.766C58.3177 162.474 57.7578 165.456 57.7578 168.711C57.7578 172.201 58.3177 175.312 59.4375 178.047C60.5573 180.781 62.0807 183.099 64.0078 185C65.9609 186.875 68.2266 188.307 70.8047 189.297C73.4089 190.286 76.1823 190.781 79.125 190.781C80.4792 190.781 81.8073 190.612 83.1094 190.273C84.4375 189.935 85.7266 189.479 86.9766 188.906C88.2266 188.307 89.4115 187.617 90.5312 186.836C91.6771 186.029 92.7578 185.169 93.7734 184.258L97.9141 190Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_8"></path>
+            <path d="M118.734 195.195V205.938L124.203 206.016C127.146 206.016 129.906 205.456 132.484 204.336C135.062 203.216 137.315 201.693 139.242 199.766C141.195 197.839 142.732 195.586 143.852 193.008C144.971 190.43 145.544 187.669 145.57 184.727V148.164H134.828V171.289C134.828 172.409 134.62 173.503 134.203 174.57C133.786 175.612 133.214 176.549 132.484 177.383C131.755 178.216 130.896 178.893 129.906 179.414C128.943 179.909 127.914 180.156 126.82 180.156C125.701 180.156 124.646 179.974 123.656 179.609C122.693 179.245 121.846 178.698 121.117 177.969C120.388 177.214 119.802 176.289 119.359 175.195C118.943 174.076 118.734 172.773 118.734 171.289V148.164H108.109V171.289C108.109 174.284 108.591 176.992 109.555 179.414C110.544 181.81 111.885 183.854 113.578 185.547C115.297 187.214 117.289 188.503 119.555 189.414C121.82 190.326 124.242 190.781 126.82 190.781C128.044 190.781 129.255 190.534 130.453 190.039C131.677 189.544 132.875 189.049 134.047 188.555C133.656 189.518 133.148 190.404 132.523 191.211C131.898 192.044 131.169 192.76 130.336 193.359C129.529 193.958 128.643 194.427 127.68 194.766C126.716 195.104 125.714 195.273 124.672 195.273L118.734 195.195Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_9"></path>
+            <path d="M40.2188 164.492C40.7917 165.846 41.0781 167.253 41.0781 168.711C41.0781 170.169 40.7917 171.589 40.2188 172.969C39.6719 174.323 38.9167 175.534 37.9531 176.602C36.9896 177.643 35.8568 178.49 34.5547 179.141C33.2786 179.766 31.9115 180.078 30.4531 180.078C28.9948 180.078 27.6146 179.779 26.3125 179.18C25.0365 178.581 23.9167 177.76 22.9531 176.719C22.0156 175.677 21.2734 174.466 20.7266 173.086C20.1797 171.706 19.9062 170.247 19.9062 168.711C19.9062 166.94 20.1797 165.352 20.7266 163.945C21.2734 162.539 22.0156 161.354 22.9531 160.391C23.9167 159.401 25.0365 158.646 26.3125 158.125C27.6146 157.604 28.9948 157.344 30.4531 157.344C31.9115 157.344 33.2786 157.669 34.5547 158.32C35.8568 158.945 36.9896 159.792 37.9531 160.859C38.9167 161.901 39.6719 163.112 40.2188 164.492Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_10"></path>
+            <path d="M88.8906 164.492C89.4635 165.846 89.75 167.253 89.75 168.711C89.75 170.169 89.4635 171.589 88.8906 172.969C88.3438 174.323 87.5885 175.534 86.625 176.602C85.6615 177.643 84.5286 178.49 83.2266 179.141C81.9505 179.766 80.5833 180.078 79.125 180.078C77.6667 180.078 76.2865 179.831 74.9844 179.336C73.7083 178.841 72.5885 178.112 71.625 177.148C70.6875 176.185 69.9453 175 69.3984 173.594C68.8516 172.161 68.5781 170.534 68.5781 168.711C68.5781 166.888 68.8516 165.273 69.3984 163.867C69.9453 162.435 70.6875 161.237 71.625 160.273C72.5885 159.31 73.7083 158.581 74.9844 158.086C76.2865 157.591 77.6667 157.344 79.125 157.344C80.5833 157.344 81.9505 157.669 83.2266 158.32C84.5286 158.945 85.6615 159.792 86.625 160.859C87.5885 161.901 88.3438 163.112 88.8906 164.492Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_11"></path>
+            <path d="M40.2188 34.4922C40.7917 35.8464 41.0781 37.2526 41.0781 38.7109C41.0781 40.1693 40.7917 41.5885 40.2188 42.9688C39.6719 44.3229 38.9167 45.5339 37.9531 46.6016C36.9896 47.6432 35.8568 48.4896 34.5547 49.1406C33.2786 49.7656 31.9115 50.0781 30.4531 50.0781C28.9948 50.0781 27.6146 49.7786 26.3125 49.1797C25.0365 48.5807 23.9167 47.7604 22.9531 46.7188C22.0156 45.6771 21.2734 44.4661 20.7266 43.0859C20.1797 41.7057 19.9062 40.2474 19.9062 38.7109C19.9062 36.9401 20.1797 35.3516 20.7266 33.9453C21.2734 32.5391 22.0156 31.3542 22.9531 30.3906C23.9167 29.401 25.0365 28.6458 26.3125 28.125C27.6146 27.6042 28.9948 27.3438 30.4531 27.3438C31.9115 27.3438 33.2786 27.6693 34.5547 28.3203C35.8568 28.9453 36.9896 29.7917 37.9531 30.8594C38.9167 31.901 39.6719 33.112 40.2188 34.4922Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_12"></path>
+            <path d="M88.8906 34.4922C89.4635 35.8464 89.75 37.2526 89.75 38.7109C89.75 40.1693 89.4635 41.5885 88.8906 42.9688C88.3438 44.3229 87.5885 45.5339 86.625 46.6016C85.6615 47.6432 84.5286 48.4896 83.2266 49.1406C81.9505 49.7656 80.5833 50.0781 79.125 50.0781C77.6667 50.0781 76.2865 49.8307 74.9844 49.3359C73.7083 48.8411 72.5885 48.112 71.625 47.1484C70.6875 46.1849 69.9453 45 69.3984 43.5938C68.8516 42.1615 68.5781 40.5339 68.5781 38.7109C68.5781 36.888 68.8516 35.2734 69.3984 33.8672C69.9453 32.4349 70.6875 31.237 71.625 30.2734C72.5885 29.3099 73.7083 28.5807 74.9844 28.0859C76.2865 27.5911 77.6667 27.3438 79.125 27.3438C80.5833 27.3438 81.9505 27.6693 83.2266 28.3203C84.5286 28.9453 85.6615 29.7917 86.625 30.8594C87.5885 31.901 88.3438 33.112 88.8906 34.4922Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_13"></path>
+            <path d="M105.766 99.0625C106.339 100.443 106.625 101.992 106.625 103.711C106.625 105.404 106.339 106.953 105.766 108.359C105.219 109.766 104.464 110.964 103.5 111.953C102.536 112.943 101.404 113.711 100.102 114.258C98.8255 114.805 97.4583 115.078 96 115.078C94.5417 115.078 93.1615 114.792 91.8594 114.219C90.5833 113.62 89.4635 112.812 88.5 111.797C87.5625 110.781 86.8203 109.583 86.2734 108.203C85.7266 106.823 85.4531 105.326 85.4531 103.711C85.4531 101.992 85.7266 100.443 86.2734 99.0625C86.8203 97.6562 87.5625 96.4583 88.5 95.4688C89.4635 94.4531 90.5833 93.6849 91.8594 93.1641C93.1615 92.6172 94.5417 92.3438 96 92.3438C97.4583 92.3438 98.8255 92.6172 100.102 93.1641C101.404 93.6849 102.536 94.4531 103.5 95.4688C104.464 96.4583 105.219 97.6562 105.766 99.0625Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="VhNqsBMt_14"></path>
+            <style data-made-with="vivus-instant">.VhNqsBMt_0{stroke-dasharray:136 138;stroke-dashoffset:137;animation:VhNqsBMt_draw_0 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_1{stroke-dasharray:136 138;stroke-dashoffset:137;animation:VhNqsBMt_draw_1 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_2{stroke-dasharray:196 198;stroke-dashoffset:197;animation:VhNqsBMt_draw_2 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_3{stroke-dasharray:163 165;stroke-dashoffset:164;animation:VhNqsBMt_draw_3 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_4{stroke-dasharray:260 262;stroke-dashoffset:261;animation:VhNqsBMt_draw_4 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_5{stroke-dasharray:202 204;stroke-dashoffset:203;animation:VhNqsBMt_draw_5 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_6{stroke-dasharray:138 140;stroke-dashoffset:139;animation:VhNqsBMt_draw_6 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_7{stroke-dasharray:196 198;stroke-dashoffset:197;animation:VhNqsBMt_draw_7 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_8{stroke-dasharray:163 165;stroke-dashoffset:164;animation:VhNqsBMt_draw_8 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_9{stroke-dasharray:260 262;stroke-dashoffset:261;animation:VhNqsBMt_draw_9 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_10{stroke-dasharray:69 71;stroke-dashoffset:70;animation:VhNqsBMt_draw_10 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_11{stroke-dasharray:70 72;stroke-dashoffset:71;animation:VhNqsBMt_draw_11 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_12{stroke-dasharray:69 71;stroke-dashoffset:70;animation:VhNqsBMt_draw_12 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_13{stroke-dasharray:70 72;stroke-dashoffset:71;animation:VhNqsBMt_draw_13 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}.VhNqsBMt_14{stroke-dasharray:70 72;stroke-dashoffset:71;animation:VhNqsBMt_draw_14 3400ms ease 0ms infinite,VhNqsBMt_fade 3400ms linear 0ms infinite;}@keyframes VhNqsBMt_draw{100%{stroke-dashoffset:0;}}@keyframes VhNqsBMt_fade{0%{stroke-opacity:1;}88.23529411764706%{stroke-opacity:1;}100%{stroke-opacity:0;}}@keyframes VhNqsBMt_draw_0{0%{stroke-dashoffset: 137}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_1{0%{stroke-dashoffset: 137}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_2{0%{stroke-dashoffset: 197}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_3{0%{stroke-dashoffset: 164}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_4{0%{stroke-dashoffset: 261}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_5{0%{stroke-dashoffset: 203}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_6{0%{stroke-dashoffset: 139}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_7{0%{stroke-dashoffset: 197}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_8{0%{stroke-dashoffset: 164}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_9{0%{stroke-dashoffset: 261}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_10{0%{stroke-dashoffset: 70}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_11{0%{stroke-dashoffset: 71}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_12{0%{stroke-dashoffset: 70}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_13{0%{stroke-dashoffset: 71}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}@keyframes VhNqsBMt_draw_14{0%{stroke-dashoffset: 71}88.23529411764706%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}</style></svg>                       
+    </div>
+
+    <div id="note-popup-cont">
+        <div id="note-popup">
+            <h2>- Добавление дела -</h1>
+            <div id="note-popup-add">
+                <div id="popup-add-textarea" contenteditable="true"></div>
+                <div id="popup-add-time">
+                    <input type="text" id="add-time-hour" class="scroll-time-hour" maxlength="2">
+                    <h1>:</h1>
+                    <input type="text" id="add-time-minute" class="scroll-time-minute" maxlength="2">
+                </div>
+            </div>
+            <div id="note-popup-btns">
+                <div class="popup-btn" id="btn-add">Добавить</div>
+                <div class="popup-btn" id="btn-back">Отмена</div>
+            </div>
+
+            <div id="popup-memory-info">?</div>
+        </div>
+        <div id="note-popup-memory-time">
+            <h2>! Вы добавляете ! Воспоминание в прошлое</h2>
+            <p>Укажите время</p>
+            <div id="popup-memory-time">
+                <input type="text" id="memory-time-hour" class="scroll-time-hour" maxlength="2">
+                <h1>:</h1>
+                <input type="text" id="memory-time-minute" class="scroll-time-minute" maxlength="2">
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div id="cont">
+        <div id="calendar-cont" class="calendar-full">
+            <div id="secondary-cont" class="glass-effect">
+                <div id="close-secondary"></div>
+                <div id="secondary-wrapper">
+                    <div id="secondary-date">
+                        <div id="secondary-day"></div>
+                        <div id="secondary-month"></div>
+                    </div>
+                    <div id="secondary-control">
+                        <div id="control-nav">
+                            <div id="control-nav-note" class="control-nav-obj control-nav-active">Дела</div>
+                            <div id="control-nav-memory" class="control-nav-obj">Воспоминания</div>
+                        </div>
+                        <div id="controls-cont">
+                            <div class="control-cont">
+                                <div class="control-box"></div>
+                                <div id="control-delete" class="control-char">-</div>
+                            </div>
+                            <div class="control-cont">
+                                <div class="control-box"></div>
+                                <div id="control-add" class="control-char">+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="records-cont"></div>
+                </div>
+            </div>
+        
+            <div id="main-cont" class="glass-effect">
+                <div id="main-wrapper">
+                    <div id="main-nav">
+                        <div class="nav-chevron"></div>
+    
+                        <div id="nav-date">
+                            <div id="date-month"></div>
+                            <div class="month-choice glass-effect">
+                                <div class="month-choice-obj">Декабрь</div>
+                                <div class="month-choice-obj">Январь</div>
+                                <div class="month-choice-obj">Февраль</div>
+                                <div class="month-choice-obj">Март</div>
+                                <div class="month-choice-obj">Апрель</div>
+                                <div class="month-choice-obj">Май</div>
+                                <div class="month-choice-obj">Июнь</div>
+                                <div class="month-choice-obj">Июль</div>
+                                <div class="month-choice-obj">Август</div>
+                                <div class="month-choice-obj">Сентябрь</div>
+                                <div class="month-choice-obj">Октябрь</div>
+                                <div class="month-choice-obj">Ноябрь</div>
+                            </div>
+                            <div id="date-year"></div>
+                            <div class="year-choice glass-effect">
+                                <input id="year-choice-input" type="text" required="true">
+                            </div>
+                        </div>
+    
+                        <div class="nav-chevron"></div>
+                    </div>
+    
+                    <div id="main-line"></div>
+                    
+                    <div id="main-week">
+                        <div class="week-day">ПН</div>
+                        <div class="week-day">ВТ</div>
+                        <div class="week-day">СР</div>
+                        <div class="week-day">ЧТ</div>
+                        <div class="week-day">ПТ</div>
+                        <div class="week-day">СБ</div>
+                        <div class="week-day">ВС</div>
+                    </div>
+
+                    <div id="calendar">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="menu-cont">
+            <div id="logo"></div>
+    
+            
+            <div id="profile-card" class="glass-effect">
+                <div id="profile-ico" class="male-ico">
+                    <div id="exit-profile"></div>
+                </div>
+                <div id="profile-name">Only.kuznetsoff</div>
+                <div id="profile-more-btn">Профиль</div>
+            </div>
+
+            <div id="login">Войти</div>
+            
+
+            <div class="login-form">
+                <div id="login-state">
+                    <div id="login-state-svg"></div>
+                    <div id="login-state-info">Обработка...</div>
+                    <div id="login-state-btn">ОК</div>
+                </div>
+                <div id="login-form-cont">
+                    <div id="close-login-form"></div>
+                    
+                    <h1>Новый пользователь</h1>
+
+                    <form id="login-form">
+                        <input name="login-form" class="login-form-input input-username" maxlength="15" type="text" placeholder="Ваш логин">
+                    
+                        <div class="login-password">
+                            <input name="login-form" class="login-form-input input-password" maxlength="20" type="password" placeholder="Ваш пароль">
+                            <div class="password-control"></div>
+                        </div>
+                    </form>
+
+                    <form id="registration-form">
+                        <input name="reg-form" class="login-form-input input-reg-username" maxlength="15" type="text" placeholder="Новый логин">
+                        
+                        <div class="login-password">
+                            <input name="reg-form-pass1" class="login-form-input input-reg-password" maxlength="20" type="password" placeholder="Новый пароль">
+                            <div class="password-control"></div>
+                        </div>
+
+                        <div class="login-password">
+                            <input name="reg-form-pass2" class="login-form-input input-reg-password" maxlength="20" type="password" placeholder="Подтвердите пароль">
+                            <div class="password-control"></div>
+                        </div>
+                    </form>
+    
+                    
+
+                    <div id="sex-choice">
+                        <h2>Выберите пол</h2>
+                        <section id="sex-choice-section">
+                        <label>
+                            <input class="sex-choice-input" type="radio" name="sex" checked>
+                            <span class="sex-choice-design"></span>
+                            <span class="sex-choice-text">Мужской</span>
+                        </label>
+                        
+                        <label>
+                            <input class="sex-choice-input" type="radio" name="sex">
+                            <span class="sex-choice-design"></span>
+                            <span class="sex-choice-text">Женский</span>
+                        </label>
+                        </section>
+                    </div>
+                    
+                    <div id="login-checkbox">
+                        <input class="login-custom-checkbox" id="login-remember" type="checkbox"  name="check-1" value="false">
+                        <label for="check-1">Запомнить вас?</label>
+                    </div>
+                    
+                    <div id="register-btn">Создать новый аккаунт</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+<script src="{{ url_for('static', filename = 'script.js') }}" type="application/javascript"></script>
+<script src="{{ url_for('static', filename = 'calendar.js') }}" type="application/javascript"></script>
+</body>
+</html>
