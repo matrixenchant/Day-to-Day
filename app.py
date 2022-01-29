@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:root@2.133.103.36:5432/day_to_day'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:root@matrixenchant.xyz/day_to_day'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 print('Подключение к базе данных...')
 db = SQLAlchemy(app)
