@@ -231,5 +231,5 @@ api.add_resource(MemoryRoutes,"/memory")
 
 if __name__ == "__main__":
     db.create_all()
-    app.run(debug=False, port="81")
+    app.run(debug=False, port="80")
     print('Приложение запустилось!')
