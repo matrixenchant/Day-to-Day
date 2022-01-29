@@ -6,6 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:root@2.133.103.36/d
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 print('Подключение к базе данных...')
 db = SQLAlchemy(app)
+print('...прошло успешно!')
 
 
 app.config["SECRET_KEY"] = "top secret"
