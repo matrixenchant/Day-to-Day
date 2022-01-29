@@ -233,5 +233,5 @@ if __name__ == "__main__":
     print('Инициализация базы данных...')
     db.create_all()
     print('Запуск приложения...')
-    app.run(debug=False, port="81")
+    app.run(debug=False, port="3000")
     print('Приложение запустилось!')
